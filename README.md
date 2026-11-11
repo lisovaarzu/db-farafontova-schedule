@@ -30,6 +30,7 @@
 cp .env.example .env
 docker compose up -d
 dbcheck run demo/lab1.sql
+dbcheck run demo/lab2.sql --sql
 ```
 
 Работа с базой:
@@ -43,6 +44,7 @@ docker compose exec db psql -U postgres -d app
 ```text
 \i /demo/lab1.sql
 ```
+Сценарий лабораторной работы №2 выполняется командой dbcheck run demo/lab2.sql --sql. Проверка дополнительных заданий: dbcheck --lab 2 --stars.
 
 После изменения скриптов в папке `db/` базу необходимо пересоздать:
 
@@ -123,7 +125,7 @@ erDiagram
 | `UNIQUE` | `schedule_entries(lesson_date, pair_slot_id, group_id)` | У группы не может быть двух занятий одновременно |
 | `CHECK` | `student_groups.course` | Курс должен быть от 1 до 6 |
 | `CHECK` | `rooms.capacity` | Вместимость аудитории должна быть больше 0 |
-| `CHECK` | `pair_slots.pair_number` | Номер пары должен быть от 1 до 8 |
+| `CHECK` | `pair_slots.pair_number` | Номер пары должен быть от 1 до 10 |
 | `CHECK` | `pair_slots.starts_at, pair_slots.ends_at` | Время окончания пары должно быть позже времени начала |
 
 ## Нормализация
@@ -179,7 +181,6 @@ erDiagram
 | Лаба | Что сделано | Сценарий |
 | --- | --- | --- |
 | 1 | Создана модель данных, таблицы, ключи, ограничения и тестовые данные | `demo/lab1.sql` |
-| 2 | — | `demo/lab2.sql` |
-| 3 | — | `demo/lab3.sql` |
+| 2 | 15 SQL-запросов: JOIN, группировки, подзапросы, INSERT, UPDATE, DELETE, CTE, оконные функции и аналитика | `demo/lab2.sql` || 3 | — | `demo/lab3.sql` |
 | 4 | — | `demo/lab4.sql`, `demo/race.sql`, `demo/race_fixed.sql` |
 | 5 | — | `demo/lab5.sql` |
