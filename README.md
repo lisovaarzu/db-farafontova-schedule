@@ -31,6 +31,8 @@ cp .env.example .env
 docker compose up -d
 dbcheck run demo/lab1.sql
 dbcheck run demo/lab2.sql --sql
+dbcheck run demo/lab3.sql --sql
+dbcheck --lab 3 --stars
 ```
 
 Работа с базой:
@@ -181,6 +183,7 @@ erDiagram
 | Лаба | Что сделано | Сценарий |
 | --- | --- | --- |
 | 1 | Создана модель данных, таблицы, ключи, ограничения и тестовые данные | `demo/lab1.sql` |
-| 2 | 15 SQL-запросов: JOIN, группировки, подзапросы, INSERT, UPDATE, DELETE, CTE, оконные функции и аналитика | `demo/lab2.sql` || 3 | — | `demo/lab3.sql` |
+| 2 | 15 SQL-запросов: JOIN, группировки, подзапросы, INSERT, UPDATE, DELETE, CTE, оконные функции и аналитика | `demo/lab2.sql` |
+| 3 | Созданы представления, функции, триггеры, материализованный отчёт, поиск по фильтрам и журнал изменений | `demo/lab3.sql` |
 | 4 | — | `demo/lab4.sql`, `demo/race.sql`, `demo/race_fixed.sql` |
 | 5 | — | `demo/lab5.sql` |
